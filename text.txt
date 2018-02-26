@@ -1,0 +1,34 @@
+SELECT offers.name FROM offers
+LEFT JOIN `requests`
+ON requests.offer_id=offers.id
+WHERE requests.id=7
+
+
+
+
+SELECT requests.id, offers.name,requests.price,requests.count,operators.fio
+FROM requests
+LEFT JOIN offers
+ON requests.offer_id=offers.id
+LEFT JOIN operators
+ON requests.operator_id=operators.id
+WHERE requests.count>2 AND (requests.operator_id=10 OR requests.operator_id=12);
+
+
+
+SELECT offers.name, SUM(requests.price*requests.count) AS test
+FROM requests
+LEFT JOIN offers
+ON requests.offer_id=offers.id
+WHERE requests.offer_id=5
+
+
+
+
+
+
+SELECT  offers.name, SUM(requests.price*requests.count) AS test
+FROM requests
+LEFT JOIN offers
+ON requests.offer_id=offers.id
+GROUP BY offers.name

@@ -1,0 +1,22 @@
+table
+{
+    width: 100%;
+
+}
+thead>tr
+{
+    background-color: aqua;
+}
+table.table_quest tr td:first-child
+{
+    width: 80%;
+}
+table.table_response thead tr td:first-child
+{
+    width: 30%;
+}
+span
+{
+    color:red;
+    font-size: 1.3rem;
+}
